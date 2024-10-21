@@ -8,12 +8,28 @@ const TitleCards = ({title, category}) => {
 
   const cardsRef = useRef();
 
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMmRhODBiMzBmMTViOTJmYjYyNjhlZGVhYjEyNWZjOSIsIm5iZiI6MTcyOTM4OTI4My42Mjc4MjYsInN1YiI6IjY3MTQ2MGYxMGNiNjI1MmY5OTA4OGMzYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.acwdjeu_t-sxaWns2Wzxswjgsu3KPUPCjcUKOo8P8DA'
+    }
+  };
+
+
   const handleWheel = (event) =>{
     event.preventDefault();
     cardsRef.current.scrollLeft += event.deltaY;
   }
   
   useEffect(() => {
+
+      
+  fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+  
     cardsRef.current.addEventListener('wheel', handleWheel);
   },[])
 

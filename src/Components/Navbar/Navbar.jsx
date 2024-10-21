@@ -12,7 +12,7 @@ const Navbar = () => {
                 <img src={logo} alt="" />
                 <ul>
                     <li>Home</li>
-                    <li>TV Show</li>
+                    <li>TV Show</li> 
                     <li>Movies</li>
                     <li>New & Popular</li>
                     <li>My list</li>
