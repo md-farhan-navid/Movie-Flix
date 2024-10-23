@@ -9,7 +9,7 @@ const TitleCards = ({title, category}) => {
   const cardsRef = useRef();
 
   const options = {
-    method: 'GET',
+    method: 'GET', 
     headers: {
       accept: 'application/json',
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMmRhODBiMzBmMTViOTJmYjYyNjhlZGVhYjEyNWZjOSIsIm5iZiI6MTcyOTM4OTI4My42Mjc4MjYsInN1YiI6IjY3MTQ2MGYxMGNiNjI1MmY5OTA4OGMzYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.acwdjeu_t-sxaWns2Wzxswjgsu3KPUPCjcUKOo8P8DA'
@@ -34,9 +34,11 @@ const TitleCards = ({title, category}) => {
   },[])
 
   return (
+
+    
     <div className='title-Cards'>
       <h2>{title?title:"popular on Netflix"}</h2>
-
+<div></div>
       <div className="card-list" ref={cardsRef}>
          {apiData.map((card, index)=> {
           return <div className="card" key={index}>
